@@ -5,66 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selly - Discord Bot</title>
     <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
         body {
-            background-color: #121216;
+            background: linear-gradient(135deg, #0d0e15 0%, #171923 100%);
             color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            padding: 50px 20px;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
         }
         .container {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #1e1e24;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 750px;
+            background: rgba(30, 32, 44, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 50px 40px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+        }
+        .header-box {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .avatar-glow {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #7289da, #b19cd9);
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+            box-shadow: 0 0 25px rgba(113, 137, 218, 0.5);
         }
         h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+        h1 span {
             color: #b19cd9;
         }
-        p {
-            color: #b9bbbe;
+        .tagline {
+            color: #a0a5b2;
+            font-size: 16px;
             margin-bottom: 30px;
+            font-style: italic;
+        }
+        .btn-container {
+            margin-bottom: 35px;
         }
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             background-color: #5865F2;
             color: white;
-            padding: 12px 25px;
-            border-radius: 8px;
+            padding: 14px 32px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: bold;
-            transition: background 0.2s;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(88, 101, 242, 0.4);
         }
         .btn:hover {
             background-color: #4752C4;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(88, 101, 242, 0.6);
         }
         .footer-links {
-            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
             font-size: 14px;
         }
         .footer-links a {
-            color: #7289da;
+            color: #b19cd9;
             text-decoration: none;
-            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.2s;
         }
         .footer-links a:hover {
+            color: #ffffff;
             text-decoration: underline;
+        }
+        .legal-section {
+            margin-top: 40px;
+            background: rgba(20, 21, 28, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 25px;
+            border-radius: 16px;
+        }
+        .legal-section h3 {
+            color: #b19cd9;
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+        .legal-section p {
+            color: #969ba5;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.05);
+            margin: 30px 0;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Selly Bot</h1>
-        <p>°•` Selly online ✦ Your loyal bot companion for this server. 💜</p>
-        
-        <!-- HIER DEINEN BOT EINLADUNGS-LINK EINFÜGEN -->
-        <a href="https://discord.com/oauth2/authorize?client_id=1546470329675685968" class="btn" target="_blank">Selly einladen</a>
+        <div class="header-box">
+            <div class="avatar-glow">💜</div>
+            <h1>Selly <span>Bot</span></h1>
+            <p class="tagline">°•` Selly online ✦ Your loyal bot companion for this server.</p>
+            
+            <div class="btn-container">
+                <a href="https://discord.com/oauth2/authorize?client_id=1546470329675685968" class="btn" target="_blank">Selly einladen</a>
+            </div>
 
-        <div class="footer-links">
-            <a href="#privacy">Datenschutz</a>
-            <a href="#terms">Nutzungsbedingungen</a>
+            <div class="footer-links">
+                <a href="#privacy">Datenschutz</a>
+                <a href="#terms">Nutzungsbedingungen</a>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div id="privacy" class="legal-section">
+            <h3>Datenschutzerklärung (Privacy Policy)</h3>
+            <p>Dein Bot Selly speichert keine unnötigen personenbezogenen Daten von Nutzern. Es werden lediglich technisch notwendige Daten (wie Server-IDs oder Befehls-Interaktionen) verarbeitet, die für die Funktion des Bots erforderlich sind. Es findet keine Weitergabe von Daten an Dritte statt.</p>
+        </div>
+
+        <div id="terms" class="legal-section" style="margin-top: 20px;">
+            <h3>Nutzungsbedingungen (Terms of Service)</h3>
+            <p>Durch das Hinzufügen von Selly zu deinem Discord-Server akzeptierst du diese Bedingungen. Der Bot wird in seinem aktuellen Zustand bereitgestellt. Für eventuelle Ausfallzeiten oder Fehler im Betrieb wird keine Haftung übernommen.</p>
         </div>
     </div>
 </body>
